@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progress — What's moving forward?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="hero">
+    <p class="eyebrow">Challenge #086 · Prompt: Progress</p>
+    <h1>What's making <span class="accent">progress</span>?</h1>
+    <p class="lede">Time, stories, goals, and habits all advance at different speeds. This hub tracks four kinds of forward motion — each with its own math and meaning.</p>
+  </header>
+
+  <main class="grid">
+    <!-- Day arc -->
+    <section class="card card--day" aria-labelledby="day-title">
+      <div class="card__head">
+        <span class="card__icon" aria-hidden="true">◐</span>
+        <div>
+          <h2 id="day-title">Today</h2>
+          <p class="card__sub">How much of the day is already behind you</p>
+        </div>
+      </div>
+      <div class="day-ring-wrap">
+        <svg class="day-ring" viewBox="0 0 120 120" role="img" aria-label="Day progress ring">
+          <circle class="day-ring__track" cx="60" cy="60" r="52"/>
+          <circle class="day-ring__fill" id="dayRingFill" cx="60" cy="60" r="52"/>
+        </svg>
+        <div class="day-ring__center">
+          <span class="day-ring__pct" id="dayPct">0%</span>
+          <span class="day-ring__label">of day done</span>
+        </div>
+      </div>
+      <div class="day-stats">
+        <div><span class="mono" id="dayElapsed">--:--</span><span>elapsed</span></div>
+        <div><span class="mono" id="dayRemaining">--:--</span><span>until midnight</span></div>
+      </div>
+    </section>
+
+    <!-- Movie -->
+    <section class="card card--movie" aria-labelledby="movie-title">
+      <div class="card__head">
+        <span class="card__icon" aria-hidden="true">▶</span>
+        <div>
+          <h2 id="movie-title">Film</h2>
+          <p class="card__sub">Playback position & time remaining</p>
+        </div>
+      </div>
+      <div class="movie-poster">
+        <div class="movie-poster__glow"></div>
+        <p class="movie-title">Midnight Express</p>
+        <p class="movie-meta">2h 04m · Drama</p>
+      </div>
+      <div class="scrubber-wrap">
+        <input type="range" class="scrubber" id="movieScrubber" min="0" max="7440" value="2180" aria-label="Playback position in seconds">
+        <div class="scrubber-labels">
+          <span class="mono" id="movieCurrent">36:20</span>
+          <span class="mono" id="movieRemaining">1:27:40 left</span>
+        </div>
+      </div>
+      <div class="movie-controls">
+        <button type="button" class="btn btn--ghost" id="moviePlay" aria-pressed="false">
+          <span id="playIcon">▶</span> <span id="playLabel">Play</span>
+        </button>
+        <span class="movie-pct"><strong id="moviePct">29</strong>% watched</span>
+      </div>
+    </section>
+
+    <!-- Book -->
+    <section class="card card--book" aria-labelledby="book-title">
+      <div class="card__head">
+        <span class="card__icon" aria-hidden="true">📖</span>
+        <div>
+          <h2 id="book-title">Book</h2>
+          <p class="card__sub">Pages read & estimated finish</p>
+        </div>
+      </div>
+      <div class="book-spine">
+        <div class="book-cover">
+          <h3>The Left Hand of Darkness</h3>
+          <p>Ursula K. Le Guin</p>
+        </div>
+        <div class="book-pages" id="bookPages" aria-hidden="true"></div>
+      </div>
+      <label class="field-label" for="bookSlider">Current page</label>
+      <input type="range" class="scrubber scrubber--book" id="bookSlider" min="1" max="304" value="187">
+      <div class="book-stats">
+        <span><strong id="bookPageNum">187</strong> / 304 pages</span>
+        <span id="bookChapter">Ch. 14 · Orgoreyn</span>
+      </div>
+      <div class="book-bar">
+        <div class="book-bar__fill" id="bookBarFill"></div>
+      </div>
+      <p class="book-eta" id="bookEta">~4 days left at 28 pgs/day</p>
+    </section>
+
+    <!-- Personal goal -->
+    <section class="card card--goal" aria-labelledby="goal-title">
+      <div class="card__head">
+        <span class="card__icon" aria-hidden="true">◎</span>
+        <div>
+          <h2 id="goal-title">Your goal</h2>
+          <p class="card__sub">Drag to log progress — persists locally</p>
+        </div>
+      </div>
+      <input type="text" class="goal-input" id="goalName" value="Ship portfolio v2" maxlength="48" aria-label="Goal name">
+      <div class="goal-meter">
+        <div class="goal-meter__fill" id="goalFill"></div>
+        <span class="goal-meter__text" id="goalText">62%</span>
+      </div>
+      <input type="range" class="scrubber" id="goalSlider" min="0" max="100" value="62" aria-label="Goal completion percentage">
+      <div class="goal-milestones" id="goalMilestones"></div>
+      <button type="button" class="btn btn--small" id="goalReset">Reset to 0%</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+  <p>Progress isn't one number — it's context. A film measures seconds, a book measures ideas per page, a day measures light, and a goal measures intention.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
