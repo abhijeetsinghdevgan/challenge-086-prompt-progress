@@ -2,6 +2,8 @@
 
 **Challenge #086 · Prompt: Progress**
 
+**Live demo:** https://abhijeetsinghdevgan.github.io/challenge-086-prompt-progress/
+
 An interactive single-page demo that explores what “progress” means in different contexts. Time, media, reading, and personal goals all move forward — but each is measured differently.
 
 ![Progress Hub dashboard — four widgets on a dark-themed layout](assets/screenshot-dashboard.png)
