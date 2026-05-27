@@ -4,6 +4,28 @@
 
 An interactive single-page demo that explores what “progress” means in different contexts. Time, media, reading, and personal goals all move forward — but each is measured differently.
 
+![Progress Hub dashboard — four widgets on a dark-themed layout](assets/screenshot-dashboard.png)
+
+## Preview
+
+| Asset | Used for |
+|-------|----------|
+| [Hero banner](assets/hero-banner.png) | Top of page — abstract motion arcs |
+| [Day visual](assets/day-visual.png) | Today widget — sunrise-to-night cycle |
+| [Movie poster](assets/movie-poster.png) | Film widget — playback card artwork |
+| [Book cover](assets/book-cover.png) | Book widget — reading progress |
+| [Goal visual](assets/goal-visual.png) | Personal goal widget — milestone illustration |
+| [Dashboard shot](assets/screenshot-dashboard.png) | Full UI overview (README & social preview) |
+
+### Widget gallery
+
+<p align="center">
+  <img src="assets/day-visual.png" alt="Day progress illustration" width="200">
+  <img src="assets/movie-poster.png" alt="Film poster artwork" width="200">
+  <img src="assets/book-cover.png" alt="Book cover artwork" width="140">
+  <img src="assets/goal-visual.png" alt="Goal progress illustration" width="200">
+</p>
+
 ## What it does
 
 Progress Hub bundles four independent trackers on one dashboard:
@@ -47,10 +69,22 @@ Then visit `http://localhost:8080`.
 ## Project structure
 
 ```
-├── index.html   # Layout and markup
-├── styles.css   # Dark theme, cards, rings, scrubbers
-├── app.js       # Progress logic and interactions
-└── README.md
+├── index.html
+├── styles.css
+├── app.js
+├── README.md
+└── assets/
+    ├── hero-banner.png
+    ├── screenshot-dashboard.png
+    ├── day-visual.png
+    ├── movie-poster.png
+    ├── book-cover.png
+    ├── goal-visual.png
+    └── icons/
+        ├── icon-day.svg
+        ├── icon-film.svg
+        ├── icon-book.svg
+        └── icon-goal.svg
 ```
 
 ## Tech stack
@@ -58,6 +92,7 @@ Then visit `http://localhost:8080`.
 - **HTML5** — semantic sections, accessible labels and ARIA where helpful
 - **CSS** — custom properties, grid layout, SVG stroke animation, responsive design
 - **JavaScript** — no frameworks; `localStorage` for the personal goal widget
+- **Assets** — PNG illustrations for cards and hero; SVG icons per widget
 
 External fonts (Google Fonts): DM Sans, JetBrains Mono.
 

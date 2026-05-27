@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Progress — What's moving forward?</title>
+  <meta name="description" content="Progress Hub — track your day, film, book, and personal goals in one interactive dashboard.">
+  <meta property="og:image" content="assets/screenshot-dashboard.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -13,6 +15,7 @@
   <div class="grain" aria-hidden="true"></div>
 
   <header class="hero">
+    <img class="hero__banner" src="assets/hero-banner.png" alt="" width="1100" height="367" decoding="async">
     <p class="eyebrow">Challenge #086 · Prompt: Progress</p>
     <h1>What's making <span class="accent">progress</span>?</h1>
     <p class="lede">Time, stories, goals, and habits all advance at different speeds. This hub tracks four kinds of forward motion — each with its own math and meaning.</p>
@@ -22,12 +25,13 @@
     <!-- Day arc -->
     <section class="card card--day" aria-labelledby="day-title">
       <div class="card__head">
-        <span class="card__icon" aria-hidden="true">◐</span>
+        <img class="card__icon" src="assets/icons/icon-day.svg" alt="" width="24" height="24">
         <div>
           <h2 id="day-title">Today</h2>
           <p class="card__sub">How much of the day is already behind you</p>
         </div>
       </div>
+      <img class="card__visual" src="assets/day-visual.png" alt="Illustration of the day cycle from sunrise to night" width="280" height="280" loading="lazy">
       <div class="day-ring-wrap">
         <svg class="day-ring" viewBox="0 0 120 120" role="img" aria-label="Day progress ring">
           <circle class="day-ring__track" cx="60" cy="60" r="52"/>
@@ -47,16 +51,18 @@
     <!-- Movie -->
     <section class="card card--movie" aria-labelledby="movie-title">
       <div class="card__head">
-        <span class="card__icon" aria-hidden="true">▶</span>
+        <img class="card__icon" src="assets/icons/icon-film.svg" alt="" width="24" height="24">
         <div>
           <h2 id="movie-title">Film</h2>
           <p class="card__sub">Playback position & time remaining</p>
         </div>
       </div>
       <div class="movie-poster">
-        <div class="movie-poster__glow"></div>
-        <p class="movie-title">Midnight Express</p>
-        <p class="movie-meta">2h 04m · Drama</p>
+        <img class="movie-poster__img" src="assets/movie-poster.png" alt="Midnight Express film poster artwork" width="640" height="360" loading="lazy">
+        <div class="movie-poster__overlay">
+          <p class="movie-title">Midnight Express</p>
+          <p class="movie-meta">2h 04m · Drama</p>
+        </div>
       </div>
       <div class="scrubber-wrap">
         <input type="range" class="scrubber" id="movieScrubber" min="0" max="7440" value="2180" aria-label="Playback position in seconds">
@@ -76,17 +82,20 @@
     <!-- Book -->
     <section class="card card--book" aria-labelledby="book-title">
       <div class="card__head">
-        <span class="card__icon" aria-hidden="true">📖</span>
+        <img class="card__icon" src="assets/icons/icon-book.svg" alt="" width="24" height="24">
         <div>
           <h2 id="book-title">Book</h2>
           <p class="card__sub">Pages read & estimated finish</p>
         </div>
       </div>
       <div class="book-spine">
-        <div class="book-cover">
-          <h3>The Left Hand of Darkness</h3>
-          <p>Ursula K. Le Guin</p>
-        </div>
+        <figure class="book-cover">
+          <img src="assets/book-cover.png" alt="Book cover: The Left Hand of Darkness by Ursula K. Le Guin" width="200" height="300" loading="lazy">
+          <figcaption>
+            <h3>The Left Hand of Darkness</h3>
+            <p>Ursula K. Le Guin</p>
+          </figcaption>
+        </figure>
         <div class="book-pages" id="bookPages" aria-hidden="true"></div>
       </div>
       <label class="field-label" for="bookSlider">Current page</label>
@@ -104,12 +113,13 @@
     <!-- Personal goal -->
     <section class="card card--goal" aria-labelledby="goal-title">
       <div class="card__head">
-        <span class="card__icon" aria-hidden="true">◎</span>
+        <img class="card__icon" src="assets/icons/icon-goal.svg" alt="" width="24" height="24">
         <div>
           <h2 id="goal-title">Your goal</h2>
           <p class="card__sub">Drag to log progress — persists locally</p>
         </div>
       </div>
+      <img class="card__visual card__visual--goal" src="assets/goal-visual.png" alt="Illustration of a creative portfolio goal with progress rising" width="280" height="280" loading="lazy">
       <input type="text" class="goal-input" id="goalName" value="Ship portfolio v2" maxlength="48" aria-label="Goal name">
       <div class="goal-meter">
         <div class="goal-meter__fill" id="goalFill"></div>
